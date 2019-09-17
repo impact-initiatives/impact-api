@@ -1,0 +1,3 @@
+[all:vars]
+mongo_username=username
+mongo_password=password

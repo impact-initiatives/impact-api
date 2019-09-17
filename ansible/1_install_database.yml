@@ -1,0 +1,14 @@
+- hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: Docker install MongoDB locally for testing
+      raw: docker run
+        --name impact-db
+        --restart=always
+        -d
+        -e MONGO_INITDB_ROOT_USERNAME={{ mongo_username }}
+        -e MONGO_INITDB_ROOT_PASSWORD={{ mongo_password }}
+        -p 27017:27017
+        impactinitiatives/mongo
+        --bind_ip_all
+        --enableFreeMonitoring off

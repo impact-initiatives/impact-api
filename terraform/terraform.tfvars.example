@@ -1,0 +1,6 @@
+# API Key
+key = "EXO..."
+# Secret Key
+secret = "..."
+# Private DB Network ID
+exoscale_network_impact_db_id = "..."
