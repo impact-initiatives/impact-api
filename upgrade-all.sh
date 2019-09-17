@@ -1,5 +1,4 @@
 yarn add \
-  apollo-server \
   apollo-server-express \
   cors \
   dotenv \

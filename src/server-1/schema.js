@@ -1,8 +1,18 @@
 import { gql } from 'apollo-server-express';
 
 const typeDefs = gql`
+  type Post {
+    id: ID
+    title: String
+    content: String
+  }
+
   type Query {
-    hello: String
+    posts: [Post]
+  }
+
+  type Mutation {
+    addPost(title: String!, content: String!): Post
   }
 `;
 
