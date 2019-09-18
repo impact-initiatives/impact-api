@@ -9,6 +9,7 @@ const typeDefs = gql`
 
   type Query {
     posts: [Post]
+    postsPublic: [Post]
   }
 
   type Mutation {

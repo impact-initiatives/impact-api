@@ -1,14 +1,25 @@
+import { AuthenticationError } from 'apollo-server-express';
+
 import { Post } from './models';
 
 const resolvers = {
   Query: {
-    posts: () => Post.find({}),
+    postsPublic: () => Post.find({}),
+    posts: (_, __, { user }) => {
+      if (!user) {
+        throw new AuthenticationError('You must be logged in to do this');
+      }
+      return Post.find({});
+    },
   },
   Mutation: {
-    addPost: (_, post) => {
+    addPost: (_, args, { user }) => {
+      if (!user) {
+        throw new AuthenticationError('You must be logged in to do this');
+      }
       const newPost = new Post({
-        title: post.title,
-        content: post.content,
+        title: args.title,
+        content: args.content,
       });
       return newPost.save();
     },

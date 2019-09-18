@@ -3,7 +3,9 @@ yarn add \
   cors \
   dotenv \
   express \
+  express-jwt \
   graphql \
+  jwks-rsa \
   mongoose \
   morgan
 
