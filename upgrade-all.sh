@@ -6,8 +6,7 @@ yarn add \
   express-jwt \
   graphql \
   jwks-rsa \
-  mongoose \
-  morgan
+  mongoose
 
 yarn add --dev \
   @babel/cli \

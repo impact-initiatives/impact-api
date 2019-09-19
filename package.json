@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "babel src --out-dir dist",
-    "start": "pm2 start ./dist/index.js",
+    "start": "node ./dist/index.js",
     "develop": "nodemon --exec babel-node ./src/index.js",
     "upgrade-all": "./upgrade-all.sh && yarn upgrade"
   },
@@ -21,8 +21,7 @@
     "express-jwt": "^5.3.1",
     "graphql": "^14.5.6",
     "jwks-rsa": "^1.6.0",
-    "mongoose": "^5.7.1",
-    "morgan": "^1.9.1"
+    "mongoose": "^5.7.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.0",
