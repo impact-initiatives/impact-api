@@ -1,3 +1,5 @@
+docker stop impact-api || true
+docker rm impact-api || true
 docker run \
   --name impact-api \
   --restart=always \
@@ -5,3 +7,4 @@ docker run \
   -p 80:80 \
   --env-file ~/.env \
   impactinitiatives/apollo
+docker image prune -af
