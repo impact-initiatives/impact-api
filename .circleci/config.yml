@@ -30,5 +30,6 @@ jobs:
           --restart=always
           -d
           -p 80:80
+          --env-file ~/.env
           impactinitiatives/apollo
       - run: ssh core@$HOSTNAME_1 docker image prune -af
