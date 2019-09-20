@@ -8,6 +8,7 @@ jobs:
       - checkout
       - setup_remote_docker
       - add_ssh_keys
+      - run: ssh-keyscan -H $HOSTNAME_1 >> ~/.ssh/known_hosts
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
