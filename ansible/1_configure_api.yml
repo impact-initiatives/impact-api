@@ -23,7 +23,5 @@
       raw: sudo systemctl restart systemd-networkd
     - name: Enable docker when host restarts
       raw: sudo systemctl enable --now docker
-    - name: Start docker container
-      raw: docker run --name impact-api --restart=always -d -p 80:80 impactinitiatives/apollo
     - name: Reboot host container
       raw: sudo reboot
