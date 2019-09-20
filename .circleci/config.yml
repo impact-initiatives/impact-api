@@ -21,13 +21,15 @@ jobs:
       - run: docker push impactinitiatives/apollo
       - run: ssh core@$HOSTNAME_1 docker stop impact-api
       - run: ssh core@$HOSTNAME_1 docker rm impact-api
-      - run: ssh core@$HOSTNAME_1 docker run
-        --name impact-api
-        --restart=always
-        -d
-        -p 80:80
-        -e DATABASE_URL=$DATABASE_URL
-        -e SERVER_1_AUDIENCE=$SERVER_1_AUDIENCE
-        -e SERVER_1_ISSUER=$SERVER_1_ISSUER
-        impactinitiatives/apollo
+      - run: >
+          ssh core@$HOSTNAME_1
+          docker run
+          --name impact-api
+          --restart=always
+          -d
+          -p 80:80
+          -e DATABASE_URL=$DATABASE_URL
+          -e SERVER_1_AUDIENCE=$SERVER_1_AUDIENCE
+          -e SERVER_1_ISSUER=$SERVER_1_ISSUER
+          impactinitiatives/apollo
       - run: ssh core@$HOSTNAME_1 docker image prune -af
