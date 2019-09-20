@@ -21,8 +21,8 @@ jobs:
       - run: docker build -t impactinitiatives/apollo .
       - run: docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
       - run: docker push impactinitiatives/apollo
-      - run: ssh core@$HOSTNAME_1 docker stop impact-api
-      - run: ssh core@$HOSTNAME_1 docker rm impact-api
+      - run: ssh core@$HOSTNAME_1 docker stop impact-api || true
+      - run: ssh core@$HOSTNAME_1 docker rm impact-api || true
       - run: >
           ssh core@$HOSTNAME_1
           docker run
