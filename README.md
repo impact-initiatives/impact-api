@@ -1,6 +1,6 @@
 # reach-apollo-server
 
-1. Run ansible plabooks: `ansible-playbook -i inventory.ini 1_install_database.yml`
+1. Run ansible plabooks: `ansible-playbook -i inventory.ini 0_test_database.yml`
 
 2. Build docker container api: `docker build -t impactinitiatives/apollo .`
 

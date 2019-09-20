@@ -1,0 +1,29 @@
+- hosts: all
+  gather_facts: no
+  tasks:
+    - name: Create Swap directory
+      raw: sudo mkdir -p /var/vm
+    - name: Allocate swap spafe
+      raw: sudo fallocate -l 1024m /var/vm/swapfile1
+    - name: Read/write permissions for owner only
+      raw: sudo chmod 600 /var/vm/swapfile1
+    - name: Make file swap
+      raw: sudo mkswap /var/vm/swapfile1
+    - name: Create swap service
+      raw: printf "[Unit]\nDescription=Turn on swap\n\n[Swap]\nWhat=/var/vm/swapfile1\n\n[Install]\nWantedBy=multi-user.target" > ~/var-vm-swapfile1.swap
+    - name: Move swap to system folder
+      raw: sudo mv ~/var-vm-swapfile1.swap /etc/systemd/system/var-vm-swapfile1.swap
+    - name: Enable system swap
+      raw: sudo systemctl enable --now var-vm-swapfile1.swap
+    - name: Update network interface
+      raw: printf "[Match]\nName=eth1\n\n[Network]\nAddress={{ internal_address }}/24" > ~/00-eth1.network
+    - name: Move network interface to system folder
+      raw: sudo mv ~/00-eth1.network /etc/systemd/network/00-eth1.network
+    - name: Restart network interface to update static routes
+      raw: sudo systemctl restart systemd-networkd
+    - name: Enable docker when host restarts
+      raw: sudo systemctl enable --now docker
+    - name: Start docker container
+      raw: docker run --name impact-api --restart=always -d -p 80:80 impactinitiatives/apollo
+    - name: Reboot host container
+      raw: sudo reboot
