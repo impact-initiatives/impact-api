@@ -1,3 +1,9 @@
+- hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: Copy keyfile to primary database
+      raw: scp ../docker-run.sh
+        core@{{ hostvars[inventory_hostname].groups.all[0] }}:~/docker-run.sh
 - hosts: all
   gather_facts: no
   tasks:
@@ -23,5 +29,7 @@
       raw: sudo systemctl restart systemd-networkd
     - name: Enable docker when host restarts
       raw: sudo systemctl enable --now docker
+    - name: Give read/execute permission to owner only
+      raw: chmod 500 ~/docker-run.sh
     - name: Reboot host container
       raw: sudo reboot
