@@ -1,7 +1,10 @@
 - hosts: localhost
   gather_facts: no
   tasks:
-    - name: Copy keyfile to primary database
+    - name: Copy env file to primary api
+      raw: scp ../.env
+        core@{{ hostvars[inventory_hostname].groups.all[0] }}:~/.env
+    - name: Copy update script to primary api
       raw: scp ../docker-run.sh
         core@{{ hostvars[inventory_hostname].groups.all[0] }}:~/docker-run.sh
 - hosts: all
@@ -29,6 +32,8 @@
       raw: sudo systemctl restart systemd-networkd
     - name: Enable docker when host restarts
       raw: sudo systemctl enable --now docker
+    - name: Give read permission to owner only
+      raw: chmod 400 ~/.env
     - name: Give read/execute permission to owner only
       raw: chmod 500 ~/docker-run.sh
     - name: Reboot host container

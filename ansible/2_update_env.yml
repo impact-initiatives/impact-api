@@ -1,11 +1,16 @@
+- hosts: all
+  gather_facts: no
+  tasks:
+    - name: Remove env
+      raw: sudo rm ~/.env || true
 - hosts: localhost
   gather_facts: no
   tasks:
-    - name: Copy keyfile to primary database
+    - name: Copy env file to primary api
       raw: scp ../.env
         core@{{ hostvars[inventory_hostname].groups.all[0] }}:~/.env
 - hosts: all
   gather_facts: no
   tasks:
-    - name: Give read/write permission to owner only
+    - name: Give read permission to owner only
       raw: chmod 400 ~/.env

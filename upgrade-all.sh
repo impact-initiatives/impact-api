@@ -1,3 +1,4 @@
+#!/bin/sh
 yarn add \
   apollo-server-express \
   cors \
