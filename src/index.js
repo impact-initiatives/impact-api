@@ -22,7 +22,7 @@ for (const [server, path, auth] of routes) {
 }
 
 mongoose.connection.once('open', () => {
-  app.listen({ port: 8080 }, () => {
-    console.log(`Apollo Server on http://localhost:8080`);
+  app.listen({ port: 80 }, () => {
+    console.log(`Apollo Server on http://localhost`);
   });
 });
