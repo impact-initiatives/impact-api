@@ -14,5 +14,4 @@ yarn add --dev \
   @babel/core \
   @babel/node \
   @babel/preset-env \
-  nodemon \
-  pm2
+  nodemon
