@@ -14,20 +14,22 @@
   "author": "Max Malynowsky <maxym.malynowsky@reach-initiative.org>",
   "license": "MIT",
   "dependencies": {
-    "apollo-server-express": "^2.9.3",
+    "apollo-server-express": "^2.9.4",
+    "apollo-server-plugin-response-cache": "^0.3.4",
     "cors": "^2.8.5",
     "dotenv": "^8.1.0",
     "express": "^4.17.1",
     "express-jwt": "^5.3.1",
-    "graphql": "^14.5.7",
+    "graphql": "^14.5.8",
     "jwks-rsa": "^1.6.0",
-    "mongoose": "^5.7.1"
+    "mongoose": "^5.7.1",
+    "saslprep": "^1.0.3"
   },
   "devDependencies": {
-    "@babel/cli": "^7.6.0",
-    "@babel/core": "^7.6.0",
-    "@babel/node": "^7.6.1",
-    "@babel/preset-env": "^7.6.0",
+    "@babel/cli": "^7.6.2",
+    "@babel/core": "^7.6.2",
+    "@babel/node": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
     "nodemon": "^1.19.2"
   }
 }

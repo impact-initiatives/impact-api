@@ -5,6 +5,10 @@ import typeDefs from './schema';
 import resolvers from './resolvers';
 import auth from './auth';
 
-const server = new ApolloServer({ ...options, typeDefs, resolvers });
+const server = new ApolloServer({
+  ...options,
+  typeDefs,
+  resolvers,
+});
 
 export default { server, auth };
