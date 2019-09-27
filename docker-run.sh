@@ -9,4 +9,3 @@ docker run \
   -p 80:80 \
   --env-file ~/.env \
   impactinitiatives/apollo
-sudo reboot
