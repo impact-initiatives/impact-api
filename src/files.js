@@ -18,10 +18,14 @@ const getFile = path => async (req, res) => {
 const putFile = (path, mode) => async (req, res) => {
   const { subfolder } = req.body;
   const { mimetype, originalname, path: tmpPath } = req.file;
-  await exec(
-    `s3cmd ${mode} --mime-type=${mimetype} put ${tmpPath} s3://impact-files${path}/${subfolder}/${originalname}`,
-  );
-  res.sendStatus(200);
+  try {
+    await exec(
+      `s3cmd ${mode} --mime-type=${mimetype} put ${tmpPath} s3://impact-files${path}/${subfolder}/${originalname}`,
+    );
+    res.sendStatus(200);
+  } catch (e) {
+    res.sendStatus(500);
+  }
 };
 
 export { getFile, putFile };
