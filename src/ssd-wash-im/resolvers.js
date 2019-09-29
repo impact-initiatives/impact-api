@@ -12,7 +12,7 @@ const resolvers = {
           $or: [{ status: 'PUBLISHED' }, { createdBy: user.email }],
         });
       }
-      return Document.find({});
+      return Document.find();
     },
   },
   Mutation: {

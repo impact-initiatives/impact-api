@@ -117,14 +117,5 @@ terraform.tfvars
 # mongo key
 mongo.key
 
-# secret folder
-secrets/
-
-# Ansible
-*.retry
-
-# project specific files
-inventory.ini
-
-# terraform secrets
-terraform.tfvars
+# .s3cmd config
+.s3cfg

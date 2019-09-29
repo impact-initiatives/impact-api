@@ -9,6 +9,7 @@ yarn add \
   graphql \
   jwks-rsa \
   mongoose \
+  multer \
   saslprep
 
 yarn add --dev \

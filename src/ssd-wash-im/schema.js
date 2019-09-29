@@ -7,7 +7,7 @@ const typeDefs = gql`
   }
 
   type Query {
-    listDocuments: [Document]
+    listDocuments: [Document!]!
   }
 
   type Mutation {
@@ -23,7 +23,7 @@ const typeDefs = gql`
       admin0: [Admin0!]!
       admin1: [Admin1!]!
       admin2: [Admin2!]!
-    ): Document
+    ): Document!
     updateDocument(
       id: ID!
       file: String!
@@ -38,7 +38,7 @@ const typeDefs = gql`
       admin1: [Admin1!]!
       admin2: [Admin2!]!
       status: Status!
-    ): Document
+    ): Document!
   }
 
   type Document {

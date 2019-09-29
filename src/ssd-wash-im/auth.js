@@ -1,7 +1,7 @@
 import jwt from 'express-jwt';
 import jwks from 'jwks-rsa';
 
-const auth = jwt({
+const options = {
   secret: jwks.expressJwtSecret({
     cache: true,
     rateLimit: true,
@@ -11,7 +11,10 @@ const auth = jwt({
   audience: 'https://api.reach-info.org/',
   issuer: 'https://ssd-wash-im.eu.auth0.com/',
   algorithms: ['RS256'],
-  credentialsRequired: false,
-});
+};
 
-export default auth;
+const graphql = jwt({ ...options, credentialsRequired: false });
+const files = jwt(options);
+const mode = '--acl-public';
+
+export default { graphql, files, mode };
