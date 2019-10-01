@@ -1,18 +1,21 @@
 import { AuthenticationError } from 'apollo-server-express';
 
-import { Document } from './models';
+import { Document, HomePage } from './models';
 
 const resolvers = {
   Query: {
     listDocuments: async (_, __, ctx) => {
       const user = await ctx.user;
       if (!user) return Document.find({ status: 'PUBLISHED' });
-      if (!ctx.permissions.includes['admin']) {
+      if (!ctx.permissions.includes('admin')) {
         Document.find({
           $or: [{ status: 'PUBLISHED' }, { createdBy: user.email }],
         });
       }
       return Document.find();
+    },
+    getHomePage: () => {
+      return HomePage.findOne();
     },
   },
   Mutation: {
@@ -21,7 +24,6 @@ const resolvers = {
       if (!user) {
         throw new AuthenticationError('You must be logged in to do this');
       }
-      const dateNow = Date.now();
       const newDocument = new Document({
         file: args.file,
         title: args.title,
@@ -34,9 +36,9 @@ const resolvers = {
         admin0: args.admin0,
         admin1: args.admin1,
         admin2: args.admin2,
-        createdAt: dateNow,
+        createdAt: Date.now(),
         createdBy: user.email,
-        updatedAt: dateNow,
+        updatedAt: Date.now(),
         updatedBy: user.email,
         status: 'DRAFT',
       });
@@ -48,7 +50,15 @@ const resolvers = {
         throw new AuthenticationError('You must be logged in to do this');
       }
       const document = await Document.findById(args.id);
-      document.file = args.fie;
+      if (
+        user.email !== document.createdBy &&
+        !ctx.permissions.includes('admin')
+      ) {
+        throw new AuthenticationError(
+          'You can only edit documents created by yourself',
+        );
+      }
+      document.file = args.file;
       document.title = args.title;
       document.documentType = args.documentType;
       document.fileType = args.fileType;
@@ -61,8 +71,22 @@ const resolvers = {
       document.admin2 = args.admin2;
       document.updatedAt = Date.now();
       document.updatedBy = user.email;
-      if (ctx.permissions.includes['admin']) document.status = args.status;
+      if (ctx.permissions.includes('admin')) document.status = args.status;
       return document.save();
+    },
+    updateHomePage: async (_, args, ctx) => {
+      const user = await ctx.user;
+      if (!user) {
+        throw new AuthenticationError('You must be logged in to do this');
+      }
+      if (!ctx.permissions.includes('admin')) {
+        throw new AuthenticationError('You must be an admin to do this');
+      }
+      const homePage = await HomePage.findOne();
+      homePage.markdown = args.markdown;
+      homePage.updatedAt = Date.now();
+      homePage.updatedBy = user.email;
+      return homePage.save();
     },
   },
 };

@@ -8,6 +8,7 @@ const typeDefs = gql`
 
   type Query {
     listDocuments: [Document!]!
+    getHomePage: HomePage!
   }
 
   type Mutation {
@@ -39,6 +40,7 @@ const typeDefs = gql`
       admin2: [Admin2!]!
       status: Status!
     ): Document!
+    updateHomePage(markdown: String!): HomePage!
   }
 
   type Document {
@@ -59,6 +61,13 @@ const typeDefs = gql`
     updatedAt: Float!
     updatedBy: String!
     status: Status!
+  }
+
+  type HomePage {
+    id: ID!
+    markdown: String!
+    updatedAt: Float!
+    updatedBy: String!
   }
 
   enum Admin0 {

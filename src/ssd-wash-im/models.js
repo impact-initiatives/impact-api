@@ -19,6 +19,13 @@ const documentSchema = new Schema({
   status: String,
 });
 
-const Document = model('ssdwashim.documents', documentSchema);
+const homePageSchema = new Schema({
+  markdown: String,
+  updatedAt: Number,
+  updatedBy: String,
+});
 
-export { Document };
+const Document = model('ssdwashim.documents', documentSchema);
+const HomePage = model('ssdwashim.homepages', homePageSchema);
+
+export { Document, HomePage };

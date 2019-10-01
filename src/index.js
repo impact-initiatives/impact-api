@@ -4,6 +4,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import multer from 'multer';
 import { tmpdir } from 'os';
+import compression from 'compression';
 
 import routes from './routes';
 import { getFile, putFile } from './files';
@@ -12,6 +13,7 @@ const app = express();
 const upload = multer({ dest: tmpdir() }).single('file');
 
 app.use(cors());
+app.use(compression({ level: 9, memLevel: 9 }));
 
 mongoose.connect(process.env.DATABASE_URL, {
   useNewUrlParser: true,

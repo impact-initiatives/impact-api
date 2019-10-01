@@ -2,6 +2,7 @@
 yarn add \
   apollo-server-express \
   apollo-server-plugin-response-cache \
+  compression \
   cors \
   dotenv \
   express \
