@@ -21,7 +21,7 @@ jobs:
       - run: docker build -t impactinitiatives/apollo .
       - run: docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
       - run: docker push impactinitiatives/apollo
-      - run: ssh core@$HOSTNAME_1 docker stop impact-api || true
-      - run: ssh core@$HOSTNAME_1 docker rm impact-api || true
-      - run: ssh core@$HOSTNAME_1 docker system prune -af
-      - run: ssh core@$HOSTNAME_1 docker run --name impact-api --restart=always -d -p 80:80 -e DATABASE_URI=$DATABASE_URI impactinitiatives/apollo
+      - run: ssh core@$HOSTNAME_1 "docker stop impact-api || true"
+      - run: ssh core@$HOSTNAME_1 "docker rm impact-api || true"
+      - run: ssh core@$HOSTNAME_1 "docker system prune -af"
+      - run: ssh core@$HOSTNAME_1 "docker run --name impact-api --restart=always -d -p 80:80 -e DATABASE_URI=$DATABASE_URI impactinitiatives/apollo"
