@@ -15,7 +15,7 @@ const upload = multer({ dest: tmpdir() }).single('file');
 app.use(cors());
 app.use(compression({ level: 9, memLevel: 9 }));
 
-mongoose.connect(process.env.DATABASE_URL, {
+mongoose.connect(process.env.DATABASE_URI, {
   useNewUrlParser: true,
   useFindAndModify: false,
   useCreateIndex: true,
