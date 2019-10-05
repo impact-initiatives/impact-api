@@ -9,3 +9,4 @@ docker run \
   -p 80:80 \
   --env-file ~/.env \
   impactinitiatives/apollo
+docker cp ~/.s3cfg impact-api:/root/.s3cfg
