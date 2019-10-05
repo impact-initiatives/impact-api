@@ -3,6 +3,8 @@
   tasks:
     - name: Remove env
       raw: sudo rm ~/.env || true
+    - name: Remove s3cfg
+      raw: sudo rm ~/.s3cfg || true
     - name: Remove env
       raw: sudo rm ~/docker-run.sh || true
 - hosts: localhost
@@ -11,6 +13,9 @@
     - name: Copy env file to primary api
       raw: scp ../.env
         core@{{ hostvars[inventory_hostname].groups.all[0] }}:~/.env
+    - name: Copy s3cfg file to primary api
+      raw: scp ../.s3cfg
+        core@{{ hostvars[inventory_hostname].groups.all[0] }}:~/.s3cfg
     - name: Copy update script to primary api
       raw: scp ../docker-run.sh
         core@{{ hostvars[inventory_hostname].groups.all[0] }}:~/docker-run.sh
@@ -19,5 +24,7 @@
   tasks:
     - name: Give read permission to owner only
       raw: chmod 400 ~/.env
+    - name: Give read permission to owner only
+      raw: chmod 400 ~/.s3cfg
     - name: Give read/execute permission to owner only
       raw: chmod 500 ~/docker-run.sh
