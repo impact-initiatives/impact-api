@@ -16,7 +16,7 @@
     - name: Create Swap directory
       raw: sudo mkdir -p /var/vm
     - name: Allocate swap spafe
-      raw: sudo fallocate -l 1024m /var/vm/swapfile1
+      raw: sudo fallocate -l {{ swap_memory }}m /var/vm/swapfile1
     - name: Read/write permissions for owner only
       raw: sudo chmod 600 /var/vm/swapfile1
     - name: Make file swap

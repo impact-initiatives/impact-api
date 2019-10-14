@@ -5,7 +5,7 @@
       raw: sudo rm ~/.env || true
     - name: Remove s3cfg
       raw: sudo rm ~/.s3cfg || true
-    - name: Remove env
+    - name: Remove update script
       raw: sudo rm ~/docker-run.sh || true
 - hosts: localhost
   gather_facts: no
