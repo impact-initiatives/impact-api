@@ -1,5 +1,5 @@
 [impact_api_1]
-1.mongo.api internal_address=10.0.0.4 swap_memory=1024
+1.mongo.api internal_address=10.0.0.4 swap_memory=2048
 
 [all:vars]
 ansible_user=core
