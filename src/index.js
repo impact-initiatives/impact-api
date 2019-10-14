@@ -12,12 +12,7 @@ import { getFile, putFile } from './files';
 const app = express();
 const upload = multer({ dest: tmpdir() }).single('file');
 
-const corsOptions = {
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
-  preflightContinue: true,
-  credentials: true,
-};
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(compression({ level: 9, memLevel: 9 }));
 
 mongoose.connect(process.env.DATABASE_URI, {
@@ -30,7 +25,7 @@ mongoose.connect(process.env.DATABASE_URI, {
 for (const [server, path, auth] of routes) {
   const encrypted = ['--encrypt', '-e'].includes(auth.mode);
   app.use(path, auth.graphql);
-  server.applyMiddleware({ app, path, cors: false });
+  server.applyMiddleware({ app, path });
   app.use(path + '-files', auth.files);
   if (encrypted) app.get(path + '-files', getFile(path));
   app.post(path + '-files', upload, putFile(path, auth.mode));
