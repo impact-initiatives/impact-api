@@ -12,7 +12,11 @@ import { getFile, putFile } from './files';
 const app = express();
 const upload = multer({ dest: tmpdir() }).single('file');
 
-app.use(cors());
+const corsOptions = {
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+  preflightContinue: true,
+};
+app.use(cors(corsOptions));
 app.use(compression({ level: 9, memLevel: 9 }));
 
 mongoose.connect(process.env.DATABASE_URI, {
