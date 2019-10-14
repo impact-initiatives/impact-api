@@ -1,7 +1,7 @@
 const exports: Exports = {
   auth0: {
     domain: 'nga-tpm.eu.auth0.com',
-    clientId: 'brF5x87G4r65QPS4okn6oIyQmqSKRwUh',
+    clientId: '5Xhn1O1JutZQtxZvyIkM9qx4w1tSsE1Y',
     audience: 'https://api.reach-info.org/',
     redirectUri: 'https://nga-tpm.reach-info.org',
   },
