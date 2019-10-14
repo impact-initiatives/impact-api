@@ -1,7 +1,7 @@
 #!/bin/sh
 docker stop impact-api || true
 docker rm impact-api || true
-docker system prune -af
+docker pull impactinitiatives/apollo
 docker run \
   --name impact-api \
   --restart=always \
@@ -10,3 +10,4 @@ docker run \
   --env-file ~/.env \
   impactinitiatives/apollo
 docker cp ~/.s3cfg impact-api:/root/.s3cfg
+docker system prune -af
