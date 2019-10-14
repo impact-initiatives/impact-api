@@ -28,4 +28,6 @@ const plugins = [responseCachePlugin()];
 
 const cacheControl = { defaultMaxAge: 0 };
 
-export default { context, plugins, cacheControl };
+const cors = false;
+
+export default { context, plugins, cacheControl, cors };
