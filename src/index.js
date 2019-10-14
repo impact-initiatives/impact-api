@@ -15,6 +15,7 @@ const upload = multer({ dest: tmpdir() }).single('file');
 const corsOptions = {
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
   preflightContinue: true,
+  credentials: true,
 };
 app.use(cors(corsOptions));
 app.use(compression({ level: 9, memLevel: 9 }));
