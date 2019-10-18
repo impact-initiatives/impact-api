@@ -7,7 +7,7 @@ const exports: Exports = {
   },
   apollo: {
     uri: 'https://api.reach-info.org/nga-tpm',
-    files: 'https://files.reach-info.org/nga-tpm/',
+    files: null,
   },
   site: {
     title: 'Nigeria Third Party Monitoring',
