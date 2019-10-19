@@ -6,7 +6,9 @@ const resolvers = {
   Query: {
     listDocuments: async (_, __, ctx) => {
       const user = await ctx.user;
-      if (!user) return Document.find({ status: 'PUBLISHED' });
+      if (!user) {
+        throw new AuthenticationError('You must be logged in to do this');
+      }
       if (!ctx.permissions.includes('admin')) {
         Document.find({
           $or: [{ status: 'PUBLISHED' }, { createdBy: user.email }],
@@ -14,7 +16,11 @@ const resolvers = {
       }
       return Document.find();
     },
-    getHomePage: () => {
+    getHomePage: async (_, __, ctx) => {
+      const user = await ctx.user;
+      if (!user) {
+        throw new AuthenticationError('You must be logged in to do this');
+      }
       return HomePage.findOne();
     },
   },
