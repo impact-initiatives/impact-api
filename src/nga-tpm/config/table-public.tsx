@@ -1,6 +1,6 @@
 import React from 'react';
 
-import exports from './exports';
+import { downloadFile } from '../utils/upload-functions';
 
 export const tableHeader = [
   'Name',
@@ -14,7 +14,11 @@ export const tableBody = (data: LabeledData[]) =>
   data.map(d => (
     <tr key={d.id}>
       <td>
-        <a href={exports.apollo.files + d.file} aria-label={d.title}>
+        <a
+          href={'#' + d.file}
+          onClick={() => downloadFile(d.file)}
+          aria-label={d.title}
+        >
           {d.title}
         </a>
       </td>
