@@ -15,8 +15,6 @@ interface Data {
   fileType: string;
   clusters: string[];
   organizations: string[];
-  donors: string[];
-  washTypes: string[];
   admin0: string[];
   admin1: string[];
   admin2: string[];
@@ -36,8 +34,6 @@ interface LabeledData {
   fileType: Option;
   clusters: Option[];
   organizations: Option[];
-  donors: Option[];
-  washTypes: Option[];
   admin0: string[];
   admin1: Option[];
   admin2: Option[];

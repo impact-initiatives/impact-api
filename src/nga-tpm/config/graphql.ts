@@ -18,8 +18,6 @@ export const LIST_DOCUMENTS = gql`
       fileType
       clusters
       organizations
-      donors
-      washTypes
       admin0
       admin1
       admin2
@@ -40,8 +38,6 @@ export const CREATE_DOCUMENT = gql`
     $fileType: FileTypes!
     $clusters: [Clusters!]!
     $organizations: [Organizations!]!
-    $donors: [Organizations!]!
-    $washTypes: [WashTypes!]!
     $admin0: [Admin0!]!
     $admin1: [Admin1!]!
     $admin2: [Admin2!]!
@@ -53,8 +49,6 @@ export const CREATE_DOCUMENT = gql`
       fileType: $fileType
       clusters: $clusters
       organizations: $organizations
-      donors: $donors
-      washTypes: $washTypes
       admin0: $admin0
       admin1: $admin1
       admin2: $admin2
@@ -66,8 +60,6 @@ export const CREATE_DOCUMENT = gql`
       fileType
       clusters
       organizations
-      donors
-      washTypes
       admin0
       admin1
       admin2
@@ -89,8 +81,6 @@ export const UPDATE_DOCUMENT = gql`
     $fileType: FileTypes!
     $clusters: [Clusters!]!
     $organizations: [Organizations!]!
-    $donors: [Organizations!]!
-    $washTypes: [WashTypes!]!
     $admin0: [Admin0!]!
     $admin1: [Admin1!]!
     $admin2: [Admin2!]!
@@ -104,8 +94,6 @@ export const UPDATE_DOCUMENT = gql`
       fileType: $fileType
       clusters: $clusters
       organizations: $organizations
-      donors: $donors
-      washTypes: $washTypes
       admin0: $admin0
       admin1: $admin1
       admin2: $admin2
@@ -118,8 +106,6 @@ export const UPDATE_DOCUMENT = gql`
       fileType
       clusters
       organizations
-      donors
-      washTypes
       admin0
       admin1
       admin2
