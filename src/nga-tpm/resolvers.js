@@ -37,8 +37,6 @@ const resolvers = {
         fileType: args.fileType,
         clusters: args.clusters,
         organizations: args.organizations,
-        donors: args.donors,
-        washTypes: args.washTypes,
         admin0: args.admin0,
         admin1: args.admin1,
         admin2: args.admin2,
@@ -70,8 +68,6 @@ const resolvers = {
       document.fileType = args.fileType;
       document.clusters = args.clusters;
       document.organizations = args.organizations;
-      document.donors = args.donors;
-      document.washTypes = args.washTypes;
       document.admin0 = args.admin0;
       document.admin1 = args.admin1;
       document.admin2 = args.admin2;

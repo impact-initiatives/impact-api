@@ -7,8 +7,6 @@ const documentSchema = new Schema({
   fileType: String,
   clusters: [String],
   organizations: [String],
-  donors: [String],
-  washTypes: [String],
   admin0: [String],
   admin1: [String],
   admin2: [String],
