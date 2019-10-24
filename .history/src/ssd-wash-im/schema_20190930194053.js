@@ -15,7 +15,6 @@ const typeDefs = gql`
     createDocument(
       file: String!
       title: String!
-      endDate: String!
       documentType: DocumentTypes!
       fileType: FileTypes!
       clusters: [Clusters!]!
@@ -30,7 +29,6 @@ const typeDefs = gql`
       id: ID!
       file: String!
       title: String!
-      endDate: String!
       documentType: DocumentTypes!
       fileType: FileTypes!
       clusters: [Clusters!]!
@@ -49,7 +47,6 @@ const typeDefs = gql`
     id: ID!
     file: String!
     title: String!
-    endDate: String!
     documentType: DocumentTypes!
     fileType: FileTypes!
     clusters: [Clusters!]!

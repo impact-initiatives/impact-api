@@ -27,7 +27,6 @@ const resolvers = {
       const newDocument = new Document({
         file: args.file,
         title: args.title,
-        endDate: args.endDate,
         documentType: args.documentType,
         fileType: args.fileType,
         clusters: args.clusters,
@@ -61,7 +60,6 @@ const resolvers = {
       }
       document.file = args.file;
       document.title = args.title;
-      document.endDate = args.endDate;
       document.documentType = args.documentType;
       document.fileType = args.fileType;
       document.clusters = args.clusters;

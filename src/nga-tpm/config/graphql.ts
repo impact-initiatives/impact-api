@@ -8,12 +8,21 @@ export const GET_HOME_PAGE = gql`
   }
 `;
 
+export const UPDATE_HOME_PAGE = gql`
+  mutation updateHomePage($markdown: String!) {
+    updateHomePage(markdown: $markdown) {
+      markdown
+    }
+  }
+`;
+
 export const LIST_DOCUMENTS = gql`
   query listDocuments {
     listDocuments {
       id
       file
       title
+      endDate
       documentType
       fileType
       clusters
@@ -34,6 +43,7 @@ export const CREATE_DOCUMENT = gql`
   mutation createDocument(
     $file: String!
     $title: String!
+    $endDate: String!
     $documentType: DocumentTypes!
     $fileType: FileTypes!
     $clusters: [Clusters!]!
@@ -45,6 +55,7 @@ export const CREATE_DOCUMENT = gql`
     createDocument(
       file: $file
       title: $title
+      endDate: $endDate
       documentType: $documentType
       fileType: $fileType
       clusters: $clusters
@@ -56,6 +67,7 @@ export const CREATE_DOCUMENT = gql`
       id
       file
       title
+      endDate
       documentType
       fileType
       clusters
@@ -77,6 +89,7 @@ export const UPDATE_DOCUMENT = gql`
     $id: ID!
     $file: String!
     $title: String!
+    $endDate: String!
     $documentType: DocumentTypes!
     $fileType: FileTypes!
     $clusters: [Clusters!]!
@@ -90,6 +103,7 @@ export const UPDATE_DOCUMENT = gql`
       id: $id
       file: $file
       title: $title
+      endDate: $endDate
       documentType: $documentType
       fileType: $fileType
       clusters: $clusters
@@ -102,6 +116,7 @@ export const UPDATE_DOCUMENT = gql`
       id
       file
       title
+      endDate
       documentType
       fileType
       clusters
@@ -114,14 +129,6 @@ export const UPDATE_DOCUMENT = gql`
       updatedAt
       updatedBy
       status
-    }
-  }
-`;
-
-export const UPDATE_HOME_PAGE = gql`
-  mutation updateHomePage($markdown: String!) {
-    updateHomePage(markdown: $markdown) {
-      markdown
     }
   }
 `;

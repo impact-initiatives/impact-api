@@ -3,7 +3,7 @@ const exports: Exports = {
     domain: 'ssd-wash-im.eu.auth0.com',
     clientId: 'brF5x87G4r65QPS4okn6oIyQmqSKRwUh',
     audience: 'https://api.reach-info.org/',
-    redirectUri: 'https://ssd-wash-im.reach-info.org',
+    redirectUri: 'http://localhost:8000',
   },
   apollo: {
     uri: 'https://api.reach-info.org/ssd-wash-im',

@@ -61,7 +61,6 @@ const resolvers = {
       }
       document.file = args.file;
       document.title = args.title;
-      document.endDate = args.endDate;
       document.documentType = args.documentType;
       document.fileType = args.fileType;
       document.clusters = args.clusters;
