@@ -3,6 +3,7 @@ import { Schema, model } from 'mongoose';
 const documentSchema = new Schema({
   file: String,
   title: String,
+  endDate: String,
   documentType: String,
   fileType: String,
   clusters: [String],
