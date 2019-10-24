@@ -19,7 +19,7 @@ const exports: Exports = {
         'Household level assessmeent conducted bi-annually across all of South Sudan.',
       img: 'map-1.png',
       url:
-        'https://public.tableau.com/views/REACH_SSD_FSNMS_WASH/Dashboard1?:showVizHome=no',
+        'https://public.tableau.com/views/SSD_WASH_Analysis-MapRed-26092019/MapRed?:showVizHome=no',
     },
     {
       title: 'Area of Knowledge',
