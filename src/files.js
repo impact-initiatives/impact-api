@@ -5,8 +5,7 @@ import { tmpdir } from 'os';
 const exec = promisify(execAsync);
 
 const getFile = path => async (req, res) => {
-  const safeFile = req.query.file.replace(/[^\w.]/g, '_').replace(/_+/g, '_');
-  const destFile = `${tmpdir()}${path}/${safeFile}`;
+  const destFile = `${tmpdir()}${path}/${req.query.file}`;
   const srcFile = `s3://impact-files${path}/${req.query.file}`;
   try {
     await exec(`s3cmd get --force ${srcFile} ${destFile}`);
@@ -19,9 +18,10 @@ const getFile = path => async (req, res) => {
 const putFile = (path, mode) => async (req, res) => {
   const { subfolder } = req.body;
   const { mimetype, originalname, path: tmpPath } = req.file;
+  const safeName = originalname.replace(/[^\w.]/g, '_').replace(/_+/g, '_');
   try {
     await exec(
-      `s3cmd ${mode} --mime-type=${mimetype} put ${tmpPath} s3://impact-files${path}/${subfolder}/${originalname}`,
+      `s3cmd ${mode} --mime-type=${mimetype} put ${tmpPath} s3://impact-files${path}/${subfolder}/${safeName}`,
     );
     res.sendStatus(200);
   } catch (e) {
