@@ -5,7 +5,8 @@ import { tmpdir } from 'os';
 const exec = promisify(execAsync);
 
 const getFile = path => async (req, res) => {
-  const destFile = `${tmpdir()}${path}/${req.query.file}`;
+  const safeFile = req.query.file.replace(/[^\w.]/g, '_').replace(/_+/g, '_');
+  const destFile = `${tmpdir()}${path}/${safeFile}`;
   const srcFile = `s3://impact-files${path}/${req.query.file}`;
   try {
     await exec(`s3cmd get --force ${srcFile} ${destFile}`);
