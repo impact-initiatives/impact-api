@@ -4,18 +4,36 @@ export const schemaTags: SchemaTag[] = [
     label: 'Document Type',
     multiple: false,
     options: [
-      { value: 'MAP', label: 'Map' },
       {
         value: 'TERMS_OF_REFERENCE',
         label: 'ToR',
         title: 'Terms of Reference',
       },
-      { value: 'REPORT', label: 'Report' },
-      { value: 'ASSESSMENT', label: 'Assessment' },
-      { value: 'FLASH', label: 'Flash Report' },
-      { value: 'FACTSHEET', label: 'Factsheet' },
-      { value: 'DATA', label: 'Data' },
-      { value: 'ODK_TOOL', label: 'ODK Tool' },
+      {
+        value: 'FACTSHEET',
+        label: 'LTM Factsheet',
+        title: 'Light Touch Monitoring Factsheet',
+      },
+      {
+        value: 'FLASH',
+        label: 'Flash',
+        title: 'Flash Report',
+      },
+      {
+        value: 'DEEP_DIVE',
+        label: 'Deep Dive',
+        title: 'Deep Dive Assessment',
+      },
+      {
+        value: 'PARTNER',
+        label: 'Partner Review',
+        title: 'Partner System Review Report',
+      },
+      {
+        value: 'THEMATIC',
+        label: 'Thematic',
+        title: 'Thematic Assessment​',
+      },
     ],
   },
   {

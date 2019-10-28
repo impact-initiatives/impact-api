@@ -153,14 +153,12 @@ const typeDefs = gql`
   }
 
   enum DocumentTypes {
-    MAP
     TERMS_OF_REFERENCE
-    REPORT
-    ASSESSMENT
-    FLASH
     FACTSHEET
-    DATA
-    ODK_TOOL
+    FLASH
+    DEEP_DIVE
+    PARTNER
+    THEMATIC
   }
 
   enum FileTypes {
