@@ -120,4 +120,3 @@ mongo.key
 # .s3cmd config
 .s3cfg
 
-.history/

@@ -10,7 +10,7 @@ const exports: Exports = {
     files: null,
   },
   site: {
-    title: 'Nigeria Third Party Monitoring',
+    title: 'NENTAD Third Party Monitoring Consortium',
   },
   maps: [
     {
