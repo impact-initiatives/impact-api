@@ -8,15 +8,15 @@
     "build": "babel src --out-dir dist",
     "start": "node ./dist/index.js",
     "develop": "nodemon --exec babel-node ./src/index.js",
-    "upgrade-all": "./upgrade-all.sh && yarn upgrade"
+    "upgrade-all": "./yarn-upgrade-all.sh"
   },
   "keywords": [],
   "author": "Max Malynowsky <maxym.malynowsky@reach-initiative.org>",
   "license": "MIT",
   "dependencies": {
-    "@babel/runtime": "^7.6.3",
-    "apollo-server-express": "^2.9.7",
-    "apollo-server-plugin-response-cache": "^0.3.5",
+    "@babel/runtime": "^7.7.4",
+    "apollo-server-express": "^2.9.12",
+    "apollo-server-plugin-response-cache": "^0.3.8",
     "compression": "^1.7.4",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
@@ -24,16 +24,16 @@
     "express-jwt": "^5.3.1",
     "graphql": "^14.5.8",
     "jwks-rsa": "^1.6.0",
-    "mongoose": "^5.7.7",
+    "mongoose": "^5.7.13",
     "multer": "^1.4.2",
     "saslprep": "^1.0.3"
   },
   "devDependencies": {
-    "@babel/cli": "^7.6.4",
-    "@babel/core": "^7.6.4",
-    "@babel/node": "^7.6.3",
-    "@babel/plugin-transform-runtime": "^7.6.2",
-    "@babel/preset-env": "^7.6.3",
-    "nodemon": "^1.19.4"
+    "@babel/cli": "^7.7.4",
+    "@babel/core": "^7.7.4",
+    "@babel/node": "^7.7.4",
+    "@babel/plugin-transform-runtime": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "nodemon": "^2.0.1"
   }
 }

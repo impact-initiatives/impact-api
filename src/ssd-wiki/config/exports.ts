@@ -1,23 +1,23 @@
 const exports: Exports = {
   auth0: {
-    domain: 'nga-tpm.eu.auth0.com',
-    clientId: '5Xhn1O1JutZQtxZvyIkM9qx4w1tSsE1Y',
+    domain: 'ssd-wiki.eu.auth0.com',
+    clientId: '9zqOxdxQE2eOIbobyrj1OthAqGJdrdNN',
     audience: 'https://api.reach-info.org/',
-    redirectUri: 'https://nga-tpm.reach-info.org',
+    redirectUri: 'https://ssd-wiki.reach-info.org',
   },
   apollo: {
-    uri: 'https://api.reach-info.org/nga-tpm',
+    uri: 'https://api.reach-info.org/ssd-wiki',
     files: null,
   },
   site: {
-    title: 'NENTAD Third Party Monitoring Consortium',
+    title: 'REACH SSD Internal Wiki',
   },
   maps: [
     {
       title: 'Reference Atlas',
       description: 'Reference atlas showing location of key infrastructure.',
       img: 'map-1.png',
-      url: 'https://nga-atlas.fieldmaps.io',
+      url: 'https://ssd-atlas.fieldmaps.io',
     },
   ],
 };

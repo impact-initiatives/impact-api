@@ -21,3 +21,5 @@ yarn add --dev \
   @babel/plugin-transform-runtime \
   @babel/preset-env \
   nodemon
+
+yarn upgrade

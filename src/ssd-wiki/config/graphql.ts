@@ -1,0 +1,141 @@
+import gql from 'graphql-tag';
+
+export const GET_HOME_PAGE = gql`
+  query getHomePage {
+    getHomePage {
+      markdown
+    }
+  }
+`;
+
+export const UPDATE_HOME_PAGE = gql`
+  mutation updateHomePage($markdown: String!) {
+    updateHomePage(markdown: $markdown) {
+      markdown
+    }
+  }
+`;
+
+export const LIST_DOCUMENTS = gql`
+  query listDocuments {
+    listDocuments {
+      id
+      file
+      title
+      endDate
+      documentType
+      fileType
+      project
+      clusters
+      audiences
+      admin0
+      admin1
+      admin2
+      createdAt
+      createdBy
+      updatedAt
+      updatedBy
+      status
+    }
+  }
+`;
+
+export const CREATE_DOCUMENT = gql`
+  mutation createDocument(
+    $file: String!
+    $title: String!
+    $endDate: String!
+    $documentType: DocumentTypes!
+    $fileType: FileTypes!
+    $project: Project!
+    $clusters: [Clusters!]!
+    $audiences: [Audiences!]!
+    $admin0: [Admin0!]!
+    $admin1: [Admin1!]!
+    $admin2: [Admin2!]!
+  ) {
+    createDocument(
+      file: $file
+      title: $title
+      endDate: $endDate
+      documentType: $documentType
+      fileType: $fileType
+      project: $project
+      clusters: $clusters
+      audiences: $audiences
+      admin0: $admin0
+      admin1: $admin1
+      admin2: $admin2
+    ) {
+      id
+      file
+      title
+      endDate
+      documentType
+      fileType
+      project
+      clusters
+      audiences
+      admin0
+      admin1
+      admin2
+      createdAt
+      createdBy
+      updatedAt
+      updatedBy
+      status
+    }
+  }
+`;
+
+export const UPDATE_DOCUMENT = gql`
+  mutation updateDocument(
+    $id: ID!
+    $file: String!
+    $title: String!
+    $endDate: String!
+    $documentType: DocumentTypes!
+    $fileType: FileTypes!
+    $project: Project!
+    $clusters: [Clusters!]!
+    $audiences: [Audiences!]!
+    $admin0: [Admin0!]!
+    $admin1: [Admin1!]!
+    $admin2: [Admin2!]!
+    $status: Status!
+  ) {
+    updateDocument(
+      id: $id
+      file: $file
+      title: $title
+      endDate: $endDate
+      documentType: $documentType
+      fileType: $fileType
+      project: $project
+      clusters: $clusters
+      audiences: $audiences
+      admin0: $admin0
+      admin1: $admin1
+      admin2: $admin2
+      status: $status
+    ) {
+      id
+      file
+      title
+      endDate
+      documentType
+      fileType
+      project
+      clusters
+      audiences
+      admin0
+      admin1
+      admin2
+      createdAt
+      createdBy
+      updatedAt
+      updatedBy
+      status
+    }
+  }
+`;
