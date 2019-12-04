@@ -19,6 +19,13 @@ const exports: Exports = {
       img: 'map-1.png',
       url: 'https://ssd-atlas.fieldmaps.io',
     },
+    {
+      title: 'Integrated Needs Tracking',
+      description:
+        'Composite severity map of current needs from multiple clusters.',
+      img: 'map-2.png',
+      url: 'https://public.tableau.com/views/REACH_SSD_INT/INT?:showVizHome=no',
+    },
   ],
 };
 

@@ -4,5 +4,5 @@ module.exports = {
   description: 'A repository of documents by REACH in South Sudan',
   themeColor: '#58585A',
   googleAnalyticsId: 'UA-40353241-12',
-  maps: ['map-1.png'],
+  maps: ['map-1.png', 'map-2.png'],
 };
