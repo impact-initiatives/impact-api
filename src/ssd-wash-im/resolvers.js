@@ -8,7 +8,7 @@ const resolvers = {
       const user = await ctx.user;
       if (!user) return Document.find({ status: 'PUBLISHED' });
       if (!ctx.permissions.includes('admin')) {
-        Document.find({
+        return Document.find({
           $or: [{ status: 'PUBLISHED' }, { createdBy: user.email }],
         });
       }

@@ -10,7 +10,7 @@ const resolvers = {
         throw new AuthenticationError('You must be logged in to do this');
       }
       if (!ctx.permissions.includes('admin')) {
-        Document.find({
+        return Document.find({
           organizations: { $in: ctx.permissions.map(e => e.toUpperCase()) },
         });
       }
