@@ -159,6 +159,7 @@ const typeDefs = gql`
     DEEP_DIVE
     PARTNER
     THEMATIC
+    MAP
   }
 
   enum FileTypes {

@@ -34,6 +34,11 @@ export const schemaTags: SchemaTag[] = [
         label: 'Thematic',
         title: 'Thematic Assessment​',
       },
+      {
+        value: 'MAP',
+        label: 'Map',
+        title: 'Static Map',
+      },
     ],
   },
   {
