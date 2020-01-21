@@ -25,7 +25,7 @@ mongoose.connect(process.env.DATABASE_URI, {
 for (const [server, path, auth] of routes) {
   const encrypted = ['--encrypt', '-e'].includes(auth.mode);
   app.use(path, auth.graphql);
-  server.applyMiddleware({ app, cors: true, path });
+  server.applyMiddleware({ app, path });
   app.use(path + '-files', auth.files);
   if (encrypted) app.get(path + '-files', getFile(path));
   app.post(path + '-files', upload, putFile(path, auth.mode));
