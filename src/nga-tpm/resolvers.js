@@ -11,7 +11,7 @@ const resolvers = {
       }
       if (!ctx.permissions.includes('admin')) {
         Document.find({
-          $or: [{ status: 'PUBLISHED' }, { createdBy: user.email }],
+          organizations: { $in: ctx.permissions.map(e => e.toUpperCase()) },
         });
       }
       return Document.find();
