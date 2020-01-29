@@ -33,7 +33,7 @@ const exports: Exports = {
       title: 'Reference Atlas',
       description: 'Reference atlas showing location of key infrastructure.',
       img: 'map-3.png',
-      url: 'https://ssd-atlas.fieldmaps.io',
+      url: 'https://atlas.fieldmaps.io/ssd/',
     },
   ],
 };
