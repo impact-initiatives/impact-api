@@ -320,6 +320,7 @@ const organizationOptions = [
   { value: 'THESO', label: 'THESO ', title: 'The Health Support Organization' },
   { value: 'TITIA', label: 'TITIA ', title: 'TITI Foundation Africa' },
   { value: 'TOP_RELIEF', label: 'Top Relief ', title: 'Top Relief' },
+  { value: 'UKAID', label: 'UKAID ', title: 'UKAID' },
   {
     value: 'UMCOR',
     label: 'UMCOR ',
@@ -346,6 +347,7 @@ const organizationOptions = [
     label: 'UNKEA ',
     title: 'Universal Network for Knowledge & Empowerment Agency',
   },
+  { value: 'USAID', label: 'USAID ', title: 'USAID' },
   {
     value: 'WECSS',
     label: 'WECSS ',

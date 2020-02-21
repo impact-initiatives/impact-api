@@ -150,6 +150,7 @@ const typeDefs = gql`
     FSL
     NUTRITION
     PROTECTION
+    WASH
   }
 
   enum DocumentTypes {
@@ -181,6 +182,7 @@ const typeDefs = gql`
     IRC
     DRC
     NRC
+    PLAN
   }
 
   enum Status {

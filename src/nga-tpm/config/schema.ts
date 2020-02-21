@@ -63,6 +63,7 @@ export const schemaTags: SchemaTag[] = [
       { value: 'FSL', label: 'FSL', title: 'Food Security & Livelihoods' },
       { value: 'NUTRITION', label: 'Nutrition' },
       { value: 'PROTECTION', label: 'Protection' },
+      { value: 'WASH', label: 'WASH' },
     ],
   },
   {
@@ -83,6 +84,7 @@ export const schemaTags: SchemaTag[] = [
       { value: 'IRC', label: 'IRC', title: 'International Rescue Committee' },
       { value: 'DRC', label: 'DRC', title: 'Danish Refugee Council' },
       { value: 'NRC', label: 'NRC', title: 'Norwegian Refugee Council' },
+      { value: 'PLAN', label: 'PLAN', title: 'PLAN' },
     ],
   },
 ];

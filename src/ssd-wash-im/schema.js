@@ -336,12 +336,14 @@ const typeDefs = gql`
     THESO
     TITIA
     TOP_RELIEF
+    UKAID
     UMCOR
     UNHCR
     UNICEF
     UNIDOR
     UNIDO_SS
     UNKEA
+    USAID
     WECSS
     WFSS
     WHEEL
