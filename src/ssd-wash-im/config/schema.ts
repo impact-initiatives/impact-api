@@ -383,7 +383,7 @@ export const schemaTags: SchemaTag[] = [
       { value: 'ASSESSMENT', label: 'Assessment' },
       { value: 'FACTSHEET', label: 'Factsheet' },
       { value: 'DATA', label: 'Data' },
-      { value: 'ODK_TOOL', label: 'ODK Tool' },
+      { value: 'ODK_TOOL', label: 'Tool' },
     ],
   },
   {
